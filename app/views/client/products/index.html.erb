@@ -1,0 +1,14 @@
+<div>
+  <%= form_tag "/client/products", method: :get do %>
+    <input type="text" name="search">
+    <input type="submit" value="Name Search">
+  <% end %>
+  <a href="/client/products/?price_sort=true">Sort by price</a>
+</div>
+
+<% @products.each do |product| %>
+  <h2><a href="/client/products/<%= product["id"] %>"><%= product["name"] %></a></h2>
+  <h3><%= product["price"] %></h3>
+  <h4><%= product["description"] %></h4>
+  
+<% end %>

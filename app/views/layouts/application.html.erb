@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ClientMiniCapstone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <% flash.each do |name, message| %>
+      <p><%= message %></p>
+    <% end %>
+
+    <a href="/client/products/new">New Product</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/login">Log In</a>
+    <a href="/logout" data-method="delete">Log Out</a>
+
+
+    <%= yield %>
+    
+  </body>
+</html>
